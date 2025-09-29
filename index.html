@@ -64,7 +64,7 @@ categories:
 <div class="hugespacer"></div>
 
 <div class="row">
-	<div class="col-md-4">
+	<div class="col-md-6">
 		<div class="head">
 			<a class="off" href="/papers/">Recent Papers</a>
 		</div>
@@ -134,7 +134,7 @@ categories:
 		<div class="bigspacer"></div>
 	</div>
 
-  <div class="col-md-4">
+  <div class="col-md-6">
     <div class="head">
       <a class="off" href="/projects/">Projects</a>
     </div>
@@ -157,40 +157,6 @@ categories:
     </div>
     <div class="bigspacer"></div>
   </div>
-
-	<div class="col-md-4">
-		<div class="head">
-			<a class="off" href="/news/">News</a>
-		</div>
-		<div class="bigspacer"></div>
-    <div class="feedbox">
-			{% for news in site.categories.news limit:5 %}
-
-				{% for member in site.categories.team %}
-					{% if member.handle == news.author %}
-						{% assign author = member %}
-					{% endif %}
-				{% endfor %}
-
-				<div class="note-title">
-					<i class="fa fa-bullhorn fa-fw"></i>
-					<a class="off" href="{{ news.url }}">
-					{{ news.title }}
-					</a>
-				</div>
-				<div class="note">
-					{{ news.excerpt | markdownify }}
-				</div>
-				<div class="smallnote">
-					Posted
-					{{ news.date | date_to_string }}
-				</div>
-				<div class="spacer"></div>
-				<div class="spacer"></div>
-			{% endfor %}
-		</div>
-		<div class="bigspacer"></div>
-	</div>
 </div>
 
 <div class="bigspacer"></div>
