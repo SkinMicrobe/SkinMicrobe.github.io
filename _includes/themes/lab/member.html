@@ -168,7 +168,7 @@
 				{{ content }}
 			</div>
 
-			<!-- Show projects, then papers, then talks, then posters -->
+			<!-- Show projects, then papers, then talks -->
 			{% for project in site.categories.projects %}
 				{% if project.contributors contains member.handle %}
 					{% assign projectsq = true %}
@@ -202,19 +202,8 @@
 				{% endfor %}
 			{% endfor %}
 
-			{% for poster in site.categories.posters %}
-				{% assign split_authors = poster.authors | split: ", " %}
-				{% for author in split_authors %}
-					{% for science_name in member.science_names %}
-						{% if author == science_name %}
-							{% assign postersq = true %}
-						{% endif %}
-					{% endfor %}
-				{% endfor %}
-			{% endfor %}
-
 			<!-- Add section divider -->
-			{% if projectsq or papersq or talksq or postersq %}
+			{% if projectsq or papersq or talksq %}
 			  <hr/>
 			{% endif %}
 
@@ -298,26 +287,6 @@
 							<a href="{{ pres.url }}" class="off">{{ pres.title }}</a>
 						  </p></div>
 						{% endif %}
-					{% endfor %}
-				{% endfor %}
-			{% endif %}
-
-			<!-- Only show posters on first author's page -->
-			<!-- Disabled for now -->
-			{% if postersq == true %}
-				<div class="bigspacer"></div>
-				<div class="head">Posters</div>
-				<div class="spacer"></div>
-				{% for poster in site.categories.posters %}
-					{% assign split_authors = poster.authors | split: ", " %}
-					{% for author in split_authors %}
-						{% for science_name in member.science_names %}
-							{% if author == science_name %}
-							  <div class="pad-left note"><p>
-								<a href="{{ poster.url }}" class="off">{{ poster.title }}</a>
-								</p></div>
-							{% endif %}
-						{% endfor %}
 					{% endfor %}
 				{% endfor %}
 			{% endif %}

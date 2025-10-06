@@ -117,7 +117,7 @@
       {{ content }}
     </div>
 
-		<!-- Show papers, then talks, then posters -->
+		<!-- Show papers, then talks -->
     {% for paper in site.categories.papers %}
       {% if paper.projects contains page.handle %}
         {% assign papersq = true %}
@@ -130,14 +130,8 @@
       {% endif %}
     {% endfor %}
 
-    {% for poster in site.categories.posters %}
-      {% if poster.projects contains page.handle %}
-        {% assign postersq = true %}
-      {% endif %}
-    {% endfor %}
-
 		<!-- Add section divider -->
-		{% if papersq or talksq or postersq %}
+		{% if papersq or talksq %}
 			<hr/>
 		{% endif %}
 
@@ -176,20 +170,6 @@
         {% if pres.projects contains page.handle %}
 					<div class="pad-left note"><p>
           <a href="{{ pres.url }}" class="off">{{ pres.title }}</a>
-					</p></div>
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-
-		<!-- Posters -->
-    {% if postersq == true %}
-      <div class="bigspacer"></div>
-      <div class="head">Posters</div>
-      <div class="spacer"></div>
-      {% for poster in site.categories.posters %}
-        {% if poster.projects contains page.handle %}
-					<div class="pad-left note"><p>
-          <a href="{{ poster.url }}" class="off">{{ poster.title }}</a>
 					</p></div>
         {% endif %}
       {% endfor %}
