@@ -62,7 +62,9 @@ categories:
 </div>
 
 <div class="hugespacer"></div>
-
+<div class="bigspacer"></div>
+<div class="title text-center">Recent Papers</div>
+<div class="smallspacer"></div>
 <div class="row">
 	{% comment %}
 	 下面实现：把 site.categories.papers 按日期降序排序为 recent 列表，
@@ -75,9 +77,6 @@ categories:
 	{% assign recent = site.categories.papers | sort: 'date' | reverse %}
 
 	<div class="col-md-4">
-		<div class="head">
-			<a class="off" href="/papers/">Recent Papers</a>
-		</div>
 		<div class="bigspacer"></div>
     <div class="feedbox">
 			{% for product in recent limit:3 offset:0 %}
@@ -143,9 +142,6 @@ categories:
 	</div>
 
   <div class="col-md-4">
-    <div class="head">
-      <a class="off" href="/papers/">Recent Papers</a>
-    </div>
     <div class="bigspacer"></div>
     <div class="feedbox">
       {% for product in recent limit:3 offset:3 %}
@@ -210,9 +206,6 @@ categories:
   </div>
 
 	<div class="col-md-4">
-		<div class="head">
-			<a class="off" href="/papers/">Recent Papers</a>
-		</div>
 		<div class="bigspacer"></div>
     <div class="feedbox">
 			{% for product in recent limit:3 offset:6 %}
