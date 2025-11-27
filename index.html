@@ -60,9 +60,11 @@ categories:
 	</div>
 </div>
 <div class="hugespacer"></div>
+
 <div class="bigspacer"></div>
-<div class="title text-center">Research Pipeline</div>
+<div class="title text-center">Recent Papers</div>
 <div class="smallspacer"></div>
+
 {% comment %}
   将 Recent Papers 合并为单列显示。
   目前设置：按日期降序排列 recent 列表，并显示 limit:20（最近 20 篇）。
@@ -73,9 +75,6 @@ categories:
 
 <div class="row">
   <div class="col-md-12">
-    <div class="head">
-      Recent Papers
-    </div>
     <div class="bigspacer"></div>
     <div class="feedbox">
       {% for product in recent limit:10 %}
